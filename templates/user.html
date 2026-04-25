@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}用户面板 - Flask身份认证系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 mx-auto">
+        <h2>用户面板</h2>
+        
+        <div class="alert alert-secondary">
+            您是普通用户，可以访问以下功能：
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">个人信息</h5>
+                        <p class="card-text">查看和编辑您的个人资料</p>
+                        <button class="btn btn-outline-info">编辑资料</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">我的文件</h5>
+                        <p class="card-text">管理您上传的个人文件</p>
+                        <button class="btn btn-outline-info">文件管理</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>可用功能</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">查看个人信息</a>
+                            <a href="#" class="list-group-item list-group-item-action">修改密码</a>
+                            <a href="#" class="list-group-item list-group-item-action">上传文件</a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h5>功能说明</h5>
+                        <p>作为普通用户，您可以：</p>
+                        <ul>
+                            <li>查看和修改自己的个人信息</li>
+                            <li>上传和管理个人文件</li>
+                            <li>更改个人密码</li>
+                            <li>查看公开的信息</li>
+                        </ul>
+                        <p class="text-muted">管理员功能需要相应的权限才能访问。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

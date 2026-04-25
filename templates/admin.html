@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}管理员面板 - Flask身份认证系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <h2>管理员面板</h2>
+        
+        <div class="alert alert-info">
+            您是以管理员身份登录的。您可以访问以下功能：
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">用户管理</h5>
+                        <p class="card-text">查看和管理所有用户信息</p>
+                        <button class="btn btn-outline-primary">查看用户</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">系统设置</h5>
+                        <p class="card-text">配置系统参数和权限</p>
+                        <button class="btn btn-outline-primary">系统设置</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">数据统计</h5>
+                        <p class="card-text">查看系统使用情况统计</p>
+                        <button class="btn btn-outline-primary">查看统计</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4>高级功能</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>文件管理</h5>
+                        <p>管理员可以上传、下载和管理服务器文件</p>
+                        <button class="btn btn-warning">文件管理</button>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>权限分配</h5>
+                        <p>为不同用户分配不同的系统权限</p>
+                        <button class="btn btn-danger">权限管理</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
