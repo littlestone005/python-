@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}助教面板 - Flask身份认证系统{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <h2>助教面板</h2>
+        <div class="alert alert-warning">您的助教权限：可批改作业、回答问题、查看任务。</div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">查看课程任务</h5>
+                        <p>查看主讲教师分配的任务清单。</p>
+                        <button class="btn btn-warning">我的任务</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">批改作业</h5>
+                        <p>批改学生提交的作业并给予反馈。</p>
+                        <button class="btn btn-warning">批改作业</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">回答学生提问</h5>
+                        <p>在论坛或留言区解答学生疑问。</p>
+                        <button class="btn btn-warning">答疑</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">查看公告</h5>
+                        <p>查看主讲教师发布的最新通知。</p>
+                        <button class="btn btn-warning">公告板</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

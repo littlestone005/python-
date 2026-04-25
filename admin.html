@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}管理员面板 - Flask身份认证系统{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <h2>管理员面板</h2>
+        
+        <div class="alert alert-info">
+            您是以管理员身份登录的。您可以访问以下功能：
+        </div>
+        
+        <!-- 功能卡片区（保持原有样式） -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">用户管理</h5>
+                        <p class="card-text">查看和管理所有用户信息</p>
+                        <button class="btn btn-outline-primary" onclick="location.href='#user-role-section'">查看用户</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">系统设置</h5>
+                        <p class="card-text">配置系统参数和权限</p>
+                        <button class="btn btn-outline-primary">系统设置</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">数据统计</h5>
+                        <p class="card-text">查看系统使用情况统计</p>
+                        <button class="btn btn-outline-primary">查看统计</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 用户角色管理区域 -->
+        <div class="card mt-4" id="user-role-section">
+            <div class="card-header">
+                <h4>用户角色管理（动态职能分离）</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>用户名</th>
+                            <th>当前角色</th>
+                            <th>当前子角色</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.role }}</td>
+                            <td>{{ user.sub_role or '无' }}</td>
+                            <td>
+                                <form method="POST" action="{{ url_for('update_role') }}" class="row g-2 align-items-center">
+                                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                                    <div class="col-auto">
+                                        <select name="role" class="form-select form-select-sm">
+                                            <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>管理员</option>
+                                            <option value="teacher" {% if user.role == 'teacher' %}selected{% endif %}>教师</option>
+                                            <option value="student" {% if user.role == 'student' %}selected{% endif %}>学生</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <select name="sub_role" class="form-select form-select-sm">
+                                            <option value="">无</option>
+                                            <option value="lead_teacher" {% if user.sub_role == 'lead_teacher' %}selected{% endif %}>主讲教师</option>
+                                            <option value="assistant" {% if user.sub_role == 'assistant' %}selected{% endif %}>助教</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" class="btn btn-sm btn-warning">修改</button>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <p class="text-muted mt-2">* 静态约束：管理员不能兼任教师；学生不能担任助教/主讲教师。</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

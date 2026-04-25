@@ -129,9 +129,10 @@ def main():
     print("\n🎊 Flask 认证系统设置完成！")
     print("📋 默认用户信息:")
     print("   管理员: admin / admin123")
-    print("   普通用户: user1 / user123")
+    print("   主讲教师: teacher_lead / teacher123")
+    print("   助教: teacher_assist / assist123")
+    print("   学生: student1 / student123")
     print("💡 现在可以运行 'python app.py' 启动应用了")
-    
     return True
 
 if __name__ == '__main__':

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}学生面板 - Flask身份认证系统{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <h2>学生面板</h2>
+        <div class="alert alert-secondary">您的学生权限：查看课程、提交作业、查看成绩。</div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">已选课程</h5>
+                        <p>查看本学期选修的课程列表。</p>
+                        <button class="btn btn-info">我的课程</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">提交作业</h5>
+                        <p>上传作业文件，查看截止日期。</p>
+                        <button class="btn btn-info">提交作业</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">查看成绩</h5>
+                        <p>查询各科成绩及详细评语。</p>
+                        <button class="btn btn-info">成绩查询</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">提问</h5>
+                        <p>向教师或助教发送问题。</p>
+                        <button class="btn btn-info">提问</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

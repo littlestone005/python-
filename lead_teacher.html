@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}主讲教师面板 - Flask身份认证系统{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-10 mx-auto">
+        <h2>主讲教师面板</h2>
+        <div class="alert alert-success">您的主讲教师权限：可管理课程、分配助教、录入成绩。</div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">课程管理</h5>
+                        <p>创建、编辑和删除课程信息。</p>
+                        <button class="btn btn-primary">管理课程</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">上传教学资料</h5>
+                        <p>上传课件、视频等学习资源。</p>
+                        <button class="btn btn-primary">上传资料</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">查看选课学生</h5>
+                        <p>浏览课程选修名单及学习进度。</p>
+                        <button class="btn btn-primary">学生名单</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">分配助教任务</h5>
+                        <p>为助教布置批改作业、答疑等任务。</p>
+                        <button class="btn btn-primary">任务分配</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">录入成绩</h5>
+                        <p>录入并发布学生考核成绩。</p>
+                        <button class="btn btn-primary">成绩录入</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
